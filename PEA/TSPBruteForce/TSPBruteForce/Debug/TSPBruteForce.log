@@ -1,0 +1,8 @@
+﻿  Edge.cpp
+  FileReader.cpp
+  Graph.cpp
+C:\Users\Bartek\Documents\Studia\PEA\TSPBruteForce\TSPBruteForce\Graph.cpp(78,18): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  TSPBruteForce.cpp
+C:\Users\Bartek\Documents\Studia\PEA\TSPBruteForce\TSPBruteForce\TSPBruteForce.cpp(54,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Generowanie kodu...
+  TSPBruteForce.vcxproj -> C:\Users\Bartek\Documents\Studia\PEA\TSPBruteForce\Debug\TSPBruteForce.exe
