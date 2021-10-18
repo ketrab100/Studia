@@ -1,0 +1,3 @@
+﻿  lab2.cpp
+C:\Users\Bartek\Documents\Studia\GK\lab2\lab2\lab2.cpp(203,1): warning C4326: zwracany typ "main" powinien być "int" zamiast "void"
+  lab2.vcxproj -> C:\Users\Bartek\Documents\Studia\GK\lab2\lab2\Debug\lab2.exe
