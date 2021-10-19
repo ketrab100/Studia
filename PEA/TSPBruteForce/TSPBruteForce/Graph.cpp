@@ -1,6 +1,7 @@
 #include "Graph.h"
 using namespace std;
 
+//stworzegrafu z pliku 
 Graph::Graph(FileReader *fileReader)
 {
 	this->vertexNumber = fileReader->vertexNumber;
@@ -17,13 +18,15 @@ Graph::~Graph()
 	delete[] bestPath;
 }
 
+//rozwi¹zanie prblemu komiwojazera metoda przegladu zupelnego
 int Graph::TSP()
 {
-	/// Picking a source city
+	//wiezcholek startowy/koncowy
 	int source = 0;
+	//lista wierzcholkow
 	vector<int> nodes;
 
-	/// pushing the rest num_nodes-1 cities into a bundle
+	//dodanie wszystkich wierzcholkow do listy poza wierzcholkiem startowym
 	for (int i = 0; i < vertexNumber; i++)
 	{
 		if (i != source)
@@ -31,17 +34,20 @@ int Graph::TSP()
 			nodes.push_back(i);
 		}
 	}
+
 	int n = nodes.size();
 	int shortest_path = INT_MAX;
+	//tablica zaswierajaca optymalna sciezke
 	int* path = new int[vertexNumber+1];
 	iterations = 0;
-	/// generating permutations and tracking the minimum cost
+	//generowanie kolnejnych permutacji
 	do
 	{
 		iterations++;
 		int path_weight = 0;
 		int j = source;
 		path[0]=j;
+		//obliczenie sumy wag krawedzi nowej sciezki
 		for (int i = 0; i < n; i++)
 		{
 			path_weight += AdjacencyMatrix[j][nodes[i]];
@@ -50,14 +56,16 @@ int Graph::TSP()
 		}
 		path_weight += AdjacencyMatrix[j][source];
 		path[vertexNumber] = source;
-
+		//jezeli suma wag krawedzi nowej sciezki jest mniejsza niz najlepsza znaleziona do tej pory 
 		if (shortest_path>path_weight)
 		{
+			//najlepsza sciezka = sciezka znaleziona w aktualnej permutacji
 			bestPath = path;
 		}
 
 		shortest_path = min(shortest_path, path_weight);
 	}
+	//dopoki istnieja niespardzone permutacje geneeruje koilejna z nich 
 	while (next_permutation(nodes.begin(), nodes.end()));
 	delete[] path;
 	iterations--;
