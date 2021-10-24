@@ -89,5 +89,5 @@ void Graph::showBestPath()
 	{
 		cout << bestPath[i] << "-";
 	}
-	cout << bestPath[vertexNumber+1];
+	cout << bestPath[vertexNumber];
 }

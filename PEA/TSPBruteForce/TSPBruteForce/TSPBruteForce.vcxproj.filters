@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Edge.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="FileReader.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
@@ -29,9 +26,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Edge.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="FileReader.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
