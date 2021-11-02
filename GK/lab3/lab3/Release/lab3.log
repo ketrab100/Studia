@@ -1,0 +1,7 @@
+﻿  lab3.cpp
+C:\Users\Bartek\Documents\Studia\GK\lab3\lab3\lab3.cpp(336,1): warning C4326: zwracany typ "main" powinien być "int" zamiast "void"
+  Trwa generowanie kodu
+  Previous IPDB not found, fall back to full compilation.
+  All 10 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Zakończono generowanie kodu
+  lab3.vcxproj -> C:\Users\Bartek\Documents\Studia\GK\lab3\lab3\Release\lab3.exe

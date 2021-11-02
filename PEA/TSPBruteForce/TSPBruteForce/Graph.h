@@ -3,19 +3,24 @@
 #include <queue>
 #include <algorithm>
 #include <string>
+#include <bitset>
 #include "FileReader.h"
 
 class Graph
 {
 private:
 	int** AdjacencyMatrix;
+	int MinCost(int startVertex, vector<int> vertexes);
 public:
-	int vertexNumber;
+	int VertexNumber;
 	Graph(FileReader* fileReader);
-	int iterations;
-	int* bestPath;
+	int Iterations;
+	int ShortestPath;
+	int* BestPath;
 	virtual ~Graph();
-	void showAdjacencyMatrix();
-    int TSP();
-	void showBestPath();
+	void ShowAdjacencyMatrix();
+	void ShowBestPath();
+    void BruteForce();
+	void HeldKarp();
+
 };
