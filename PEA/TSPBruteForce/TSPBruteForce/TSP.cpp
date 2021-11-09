@@ -23,7 +23,7 @@ int main()
 	mINI::INIStructure ini;
 	file.read(ini);
 
-	for (int i = 1; i < 8; i++)
+	for (int i = 1; i < 9; i++)
 	{
 		string name = to_string(i);
 		string fileName = ini[name]["fileName"];
@@ -47,11 +47,11 @@ int main()
 		cout << "Nazwa pliku: " << fileName << endl;
 		cout << "Kosz przejscia optymalna sciezka: ";
 		cout << graph->ShortestPath << endl;
-		/*
-		cout << "Sciezka: ";
-		graph->ShowBestPath();
+		
+		//cout << "Sciezka: ";
+		//graph->ShowBestPath();
 		cout << endl << "Czas znalezienia sciezki  [ms] = " << setprecision(3) << (1000.0 * elapsed) / frequency << endl << endl;
-
+		/*
 		csvFile << "Nazwa pliku;Iteracje;Koszt przejscia" << endl;
 		csvFile << fileName << ";";
 		csvFile << graph->Iterations << ";";

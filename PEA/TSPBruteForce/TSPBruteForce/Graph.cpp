@@ -173,23 +173,5 @@ void Graph::HeldKarp()
 		answer = min(answer, AdjacencyMatrix[last][VertexNumber - 1] + best[(1 << (VertexNumber - 1)) - 1][last]);
 	}
 
-	int c = pow(2, VertexNumber) - 1;
-
-	for (int i = 0; i < VertexNumber; i++)
-	{
-		int b = INT_MAX;
-		int v = 0;
-		for (int j = 0; j < VertexNumber-1; j++)
-		{
-			if (best[c][j] < b)
-			{
-				b = best[c][j];
-				v = j;
-			}
-		}
-		cout << v;
-		c -= pow(2, v);
-	}
-
 	ShortestPath = answer;
 }
