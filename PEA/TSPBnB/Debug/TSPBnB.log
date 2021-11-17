@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Users\Bartek\Documents\Studia\PEA\TSPBnB\Main.cpp(13,27): warning C4101: "start": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\Bartek\Documents\Studia\PEA\TSPBnB\Main.cpp(13,34): warning C4101: "elapsed": lokalna zmienna, do której nie istnieje odwołanie
+  TSPBnB.vcxproj -> C:\Users\Bartek\Documents\Studia\PEA\TSPBnB\Debug\TSPBnB.exe

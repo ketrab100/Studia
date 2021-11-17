@@ -1,0 +1,42 @@
+Nazwa pliku;Koszt przejscia
+tsp61.txt;132
+Time [us] = ;5.8
+Time [ms] = ;0.0058
+Wielkosc instacji = ;6
+
+Nazwa pliku;Koszt przejscia
+tsp62.txt;80
+Time [us] = ;36.2
+Time [ms] = ;0.0362
+Wielkosc instacji = ;6
+
+Nazwa pliku;Koszt przejscia
+tsp10.txt;212
+Time [us] = ;502
+Time [ms] = ;0.502
+Wielkosc instacji = ;10
+
+Nazwa pliku;Koszt przejscia
+tsp12.txt;264
+Time [us] = ;2.27e+03
+Time [ms] = ;2.27
+Wielkosc instacji = ;12
+
+Nazwa pliku;Koszt przejscia
+tsp13.txt;269
+Time [us] = ;5.81e+03
+Time [ms] = ;5.81
+Wielkosc instacji = ;13
+
+Nazwa pliku;Koszt przejscia
+tsp14.txt;282
+Time [us] = ;1.49e+04
+Time [ms] = ;14.9
+Wielkosc instacji = ;14
+
+Nazwa pliku;Koszt przejscia
+tsp15.txt;291
+Time [us] = ;2e+04
+Time [ms] = ;20
+Wielkosc instacji = ;15
+

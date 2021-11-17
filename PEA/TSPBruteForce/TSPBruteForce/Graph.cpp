@@ -98,69 +98,44 @@ void Graph::BruteForce()
 
 void Graph::HeldKarp()
 {
-	// initialize the DP table
+	// initialize the DP table 
 	// best[visited][last] = the cheapest way to reach the state where: 
-	// - "visited" encodes the set of visited vertices other than N-1 
+	// - "visited" encodes the set of visited vertices other than N-1
 	// - "last" is the number of the vertex visited last 
 
-	//int* visited = new int[pow(2, VertexNumber)];
+	vector< vector<int> > best(1 << (VertexNumber - 1), vector<int>(VertexNumber, INT_MAX));
 
-	bool** visited = new bool*[pow(2, VertexNumber)];
-	for (int i = 0; i < pow(2, VertexNumber); i++)
-	{
-		visited[i] = new bool[VertexNumber];
-		int n = i;
-		for (int j = 0; j < VertexNumber; j++)
-		{
-			visited[i][j] = n%2;
-			n /= 2;
-		}
-	}
+	// use DP to solve all states 
+	// note that whenever we solve a particular state,  
+	// the smaller states we need have already been solved 
 
-	int** best = new int* [pow(2, VertexNumber)];
-	for (int i = 0; i < pow(2, VertexNumber); i++)
+	for (int visited = 1; visited < (1 << (VertexNumber - 1)); ++visited) 
 	{
-		best[i] = new int[VertexNumber];
-		for (int j = 0; j < VertexNumber; j++)
+		for (int last = 0; last < (VertexNumber - 1); ++last) 
 		{
-			best[i][j] = INT_MAX;
-		}
-	}
 
-	for (int i = 0; i < pow(2,VertexNumber); i++)
-	{
-		for (int j = 0; j < (VertexNumber); j++)
-		{
 			// last visited vertex must be one of the visited vertices 
-			if (!(visited[i][j])) continue;
+			if (!(visited & 1 << last))
+			{
+				continue;
+			}
 
 			// try all possibilities for the previous vertex, 
 			// pick the best among them 
-			if (i == pow(2,j))
+			if (visited == 1 << last) 
 			{
 				// previous vertex must have been N-1 
-				best[i][j] = AdjacencyMatrix[VertexNumber-1][j];
+				best[visited][last] = AdjacencyMatrix[VertexNumber - 1][last];
 			}
-			else
-			{
+			else {
 				// previous vertex was one of the other ones in "visited" 
-				bool* prevVisited = new bool[VertexNumber];
-				int prev_visited = i - pow(2,j);
-				for (int k = 0; k < VertexNumber; k++)
-				{
-					if (j == k)
+				int prev_visited = visited ^ 1 << last;
+				for (int prev = 0; prev < VertexNumber - 1; ++prev) {
+					if (!(prev_visited & 1 << prev))
 					{
-						prevVisited[k] = 0;
+						continue;
 					}
-					else
-					{
-						prevVisited[k] = visited[i][k];
-					}
-				}
-				for (int prev = 0; prev < VertexNumber; prev++)
-				{
-					if (!(prevVisited[prev])) continue;
-					best[i][j] = min(best[i][j], AdjacencyMatrix[j][prev] + best[prev_visited][prev]);
+					best[visited][last] = min(best[visited][last],AdjacencyMatrix[last][prev] + best[prev_visited][prev]);
 				}
 			}
 		}
@@ -168,27 +143,9 @@ void Graph::HeldKarp()
 
 	// use the precomputed path lengths to choose the cheapest cycle 
 	int answer = INT_MAX;
-	for (int last = 0; last < VertexNumber; last++)
+	for (int last = 0; last < VertexNumber - 1; ++last)
 	{
 		answer = min(answer, AdjacencyMatrix[last][VertexNumber - 1] + best[(1 << (VertexNumber - 1)) - 1][last]);
-	}
-
-	int c = pow(2, VertexNumber) - 1;
-
-	for (int i = 0; i < VertexNumber; i++)
-	{
-		int b = INT_MAX;
-		int v = 0;
-		for (int j = 0; j < VertexNumber-1; j++)
-		{
-			if (best[c][j] < b)
-			{
-				b = best[c][j];
-				v = j;
-			}
-		}
-		cout << v;
-		c -= pow(2, v);
 	}
 
 	ShortestPath = answer;
