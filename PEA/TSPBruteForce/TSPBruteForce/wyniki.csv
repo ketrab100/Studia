@@ -1,60 +1,15 @@
-Nazwa pliku;Koszt przejscia
-tsp61.txt;132
-Time [us] = ;5.9
-Time [ms] = ;0.0059
-Wielkosc instacji = ;6
+tsp61.txt;119;132
 
-Nazwa pliku;Koszt przejscia
-tsp62.txt;68
-Time [us] = ;7.2
-Time [ms] = ;0.0072
-Wielkosc instacji = ;6
+Time [us] = ;462
+Time [ms] = ;0.462
 
-Nazwa pliku;Koszt przejscia
-tsp10.txt;212
-Time [us] = ;184
-Time [ms] = ;0.184
-Wielkosc instacji = ;10
+tsp62.txt;119;80
 
-Nazwa pliku;Koszt przejscia
-tsp12.txt;264
-Time [us] = ;1.14e+03
-Time [ms] = ;1.14
-Wielkosc instacji = ;12
+Time [us] = ;320
+Time [ms] = ;0.32
 
-Nazwa pliku;Koszt przejscia
-tsp13.txt;269
-Time [us] = ;3.04e+03
-Time [ms] = ;3.04
-Wielkosc instacji = ;13
+tsp10.txt;362879;212
 
-Nazwa pliku;Koszt przejscia
-tsp14.txt;282
-Time [us] = ;4.48e+03
-Time [ms] = ;4.48
-Wielkosc instacji = ;14
-
-Nazwa pliku;Koszt przejscia
-tsp15.txt;291
-Time [us] = ;9.68e+03
-Time [ms] = ;9.68
-Wielkosc instacji = ;15
-
-Nazwa pliku;Koszt przejscia
-tsp17.txt;39
-Time [us] = ;4.64e+04
-Time [ms] = ;46.4
-Wielkosc instacji = ;17
-
-Nazwa pliku;Koszt przejscia
-tsp21.txt;2707
-Time [us] = ;1.01e+06
-Time [ms] = ;1.01e+03
-Wielkosc instacji = ;21
-
-Nazwa pliku;Koszt przejscia
-tsp24.txt;1272
-Time [us] = ;9.1e+06
-Time [ms] = ;9.1e+03
-Wielkosc instacji = ;24
+Time [us] = ;1.02e+06
+Time [ms] = ;1.02e+03
 
