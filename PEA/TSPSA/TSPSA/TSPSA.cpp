@@ -5,8 +5,9 @@
 int main()
 {
     FileReader* fileReader = new FileReader();
-    fileReader->Read("tsp17.txt");
+    fileReader->Read("ulysses22.txt");
     Graph* graph = new Graph(fileReader);
     graph->SimulatedAnnealing();
-    cout << graph->ShortestPath;
+    cout << graph->ShortestPath << endl;
+
 }

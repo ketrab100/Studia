@@ -95,49 +95,59 @@ void Graph::BruteForce()
 
 void Graph::SimulatedAnnealing()
 {
+	srand(time(NULL));
 	//lista wierzcholkow
 	vector<int> nodes;
+	int startVertex = 0;
 	//dodanie wszystkich wierzcholkow do listy
 	for (int i = 0; i < VertexNumber; i++)
 	{
-		nodes.push_back(i);
+		if (i != startVertex)
+		{
+			nodes.push_back(i);
+		}
 	}
+
+	//cout << CalcCost(nodes, startVertex) << endl;
+
+	random_shuffle(nodes.begin(), nodes.end(), [](int n) { return rand() % n; });
+
 	vector<int> bestPermutation;
 	bestPermutation = nodes;
-
-	//next_permutation(nodes.begin(), nodes.end());
-	//cout << "nowa = " << CalcCost(nodes) << endl;
-	//cout << "stara = " << CalcCost(bestPermutation) << endl;
-
 	int n = 0;
-	int l = 20;
-	float t0 = 999999999;
+	int l = 5;
+	float t0 =  1000;
 	int k = 0;
 	float t = t0;
-	do 
+	while (n < 2)
 	{
-		bool c = false;
 		k++;
+		vector<int> bestInEra = nodes;
+		vector<int> current = nodes;
+
 		for (int i = 0; i < l; i++)
 		{
-			next_permutation(nodes.begin(), nodes.end());
-			int delta = CalcCost(nodes) - CalcCost(bestPermutation);
-			if (delta < 0) {
-				bestPermutation = nodes;
-				c = true;
-			}
-			else
+			int r1 = 0;
+			int r2 = 0;
+			while (r1 == r2)
 			{
-				float s = float(rand() % 101) / 100;
-				if (s < exp(-delta / t))
-				{
-					c = true;
-					bestPermutation = nodes;
-				}
+				r1 = rand() % (VertexNumber - 1);
+				r2 = rand() % (VertexNumber - 1);
+			}
+			swap(current[r1], current[r2]);
+			int delta = CalcCost(current, startVertex) - CalcCost(bestInEra, startVertex);
+			if (delta < 0)
+			{
+				bestInEra = current;
 			}
 		}
-		if (c == true)
+
+		int delta = CalcCost(bestInEra, startVertex) - CalcCost(bestPermutation, startVertex);
+		float s = float(rand() % 101) / 100;
+		if (delta<0 || exp(-(delta) / t)>s)
 		{
+			bestPermutation = bestInEra;
+			nodes = bestPermutation;
 			n = 0;
 		}
 		else
@@ -145,23 +155,24 @@ void Graph::SimulatedAnnealing()
 			n++;
 		}
 		t = ChangeTemperature(t, k);
-	} while (n < 2);
+	}
+
 	for (int i = 0; i < VertexNumber - 1; i++)
 	{
 		BestPath[i] = bestPermutation[i];
 	}
-	BestPath[VertexNumber] = nodes[0];
-	ShortestPath = CalcCost(bestPermutation);
+	BestPath[VertexNumber] = startVertex;
+	ShortestPath = CalcCost(bestPermutation, startVertex);
 }
 
-int Graph::CalcCost(vector<int> path)
+int Graph::CalcCost(vector<int> path, int startVertex)
 {
-	int cost = 0;
+	int cost = AdjacencyMatrix[startVertex][path[0]];
 	for (int i = 0; i < path.size()-1; i++)
 	{
 		cost += AdjacencyMatrix[path[i]][path[i + 1]];
 	}
-	cost += AdjacencyMatrix[path[path.size()-1]][path[0]];
+	cost += AdjacencyMatrix[path[path.size()-1]][startVertex];
 	return cost;
 }
 

@@ -20,6 +20,6 @@ public:
 	void ShowBestPath();
 	void BruteForce();
 	void SimulatedAnnealing();
-	int CalcCost(vector<int> path);
+	int CalcCost(vector<int> path, int startVertex);
 	float ChangeTemperature(float t, int k);
 };
