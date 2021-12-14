@@ -147,7 +147,7 @@ void Graph::SimulatedAnnealing()
 		if (delta<0 || exp(-(delta) / t)>s)
 		{
 			bestPermutation = bestInEra;
-			nodes = bestPermutation;
+			//nodes = bestPermutation;
 			n = 0;
 		}
 		else
