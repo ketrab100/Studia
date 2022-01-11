@@ -4,6 +4,10 @@
 #include <algorithm>
 #include <string>
 #include <bitset>
+#include <algorithm>
+#include <fstream>
+#include <cmath>
+#include <random>
 #include "FileReader.h"
 
 class Graph
@@ -11,15 +15,16 @@ class Graph
 private:
 	int** AdjacencyMatrix;
 public:
+	vector<int> localBest;
 	int VertexNumber;
 	Graph(FileReader* fileReader);
 	int ShortestPath;
 	int* BestPath;
+
 	virtual ~Graph();
 	void ShowAdjacencyMatrix();
 	void ShowBestPath();
-	void BruteForce();
 	void SimulatedAnnealing();
-	int CalcCost(vector<int> path, int startVertex);
-	float ChangeTemperature(float t, int k);
+	int CalcCost(vector<int> path);
+	double ChangeTemperature(double a, int era);
 };

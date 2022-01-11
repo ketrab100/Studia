@@ -1,4 +1,6 @@
 ﻿  Graph.cpp
-C:\Users\Bartek\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(161,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Bartek\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(171,28): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
-  TSPSA.vcxproj -> C:\Users\Bartek\Documents\Studia\PEA\TSPSA\Debug\TSPSA.exe
+C:\Users\sawic\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(44,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\sawic\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(64,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sawic\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\sawic\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(122,22): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  TSPSA.vcxproj -> C:\Users\sawic\Documents\Studia\PEA\TSPSA\Debug\TSPSA.exe

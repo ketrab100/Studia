@@ -1,10 +1,7 @@
-﻿  Graph.cpp
-C:\Users\Bartek\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(120,11): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\Bartek\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(169,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Bartek\Documents\Studia\PEA\TSPSA\TSPSA\Graph.cpp(179,26): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
-  Trwa generowanie kodu
-  2 of 254 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+﻿  TSPSA.cpp
+  Generating code
+  1 of 790 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
-  Zakończono generowanie kodu
-  TSPSA.vcxproj -> C:\Users\Bartek\Documents\Studia\PEA\TSPSA\Release\TSPSA.exe
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  TSPSA.vcxproj -> C:\Users\sawic\Documents\Studia\PEA\TSPSA\Release\TSPSA.exe
